@@ -47,6 +47,9 @@ public class DashboardViewController implements Initializable {
     private TextField searchTextField;
 
     @FXML
+    private ComboBox<?> cityFilterComboBox;
+
+    @FXML
     private TableView<Customer> tableView;
 
     ArrayList<Customer> customers;

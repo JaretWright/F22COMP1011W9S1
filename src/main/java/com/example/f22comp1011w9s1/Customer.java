@@ -7,13 +7,14 @@ import java.util.List;
 
 public class Customer {
     private int customerId;
-    private String firstName, lastName, province, bloodType;
+    private String firstName, lastName, city, province, bloodType;
     private LocalDate birthday;
 
-    public Customer(int customerId, String firstName, String lastName, String province, String bloodType, LocalDate birthday) {
+    public Customer(int customerId, String firstName, String lastName, String city, String province, String bloodType, LocalDate birthday) {
         setCustomerId(customerId);
         setFirstName(firstName);
         setLastName(lastName);
+        setCity(city);
         setProvince(province);
         setBloodType(bloodType);
         setBirthday(birthday);
@@ -98,8 +99,14 @@ public class Customer {
                 || bloodType.contains(searchText);
     }
 
-    public int getAge()
-    {
-        return Period.between(birthday, LocalDate.now()).getYears();
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        if (city.length()>=2)
+            this.city = city;
+        else
+            throw new IllegalArgumentException("city must be 2 or more characters");
     }
 }

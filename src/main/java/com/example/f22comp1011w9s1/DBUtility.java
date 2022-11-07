@@ -56,11 +56,12 @@ public class DBUtility {
                 String firstName = resultSet.getString("firstName");
                 String lastName = resultSet.getString("lastName");
                 String province = resultSet.getString("province");
+                String city = resultSet.getString("city");
                 String bloodType = resultSet.getString("bloodType");
                 LocalDate birthday = resultSet.getDate("birthday").toLocalDate();
 
                 Customer customer = new Customer(customerId, firstName, lastName,
-                                                    province, bloodType,birthday);
+                                                    city, province, bloodType,birthday);
                 customers.add(customer);
             }
         } catch (Exception e)
