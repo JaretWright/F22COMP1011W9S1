@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="1000.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f22comp1011w9s1.DashboardViewController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1000.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -22,9 +21,9 @@
             <TableView fx:id="tableView" prefHeight="508.0" prefWidth="1180.0">
               <columns>
                 <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="fulleNameColumn" prefWidth="75.0" text="Full Name" />
+                <TableColumn fx:id="fullNameColumn" prefWidth="75.0" text="Full Name" />
                   <TableColumn fx:id="provinceColumn" prefWidth="75.0" text="Province" />
-                  <TableColumn fx:id="birthdayColumn" prefWidth="75.0" text="Age" />
+                  <TableColumn fx:id="birthdayColumn" prefWidth="75.0" text="Birthday" />
                   <TableColumn fx:id="bloodTypeColumn" prefWidth="75.0" text="Blood Type" />
               </columns>
                <columnResizePolicy>
@@ -36,12 +35,17 @@
             </TableView>
             <HBox spacing="10.0">
                <children>
-                  <VBox>
+                  <VBox spacing="10.0">
                      <children>
-                        <Label id="darkBackgroundText" fx:id="customerLabel" text="Customers" />
+                        <VBox>
+                           <children>
+                              <Label id="darkBackgroundText" text="Search" />
+                              <TextField fx:id="searchTextField" minWidth="350.0" />
+                           </children>
+                        </VBox>
+                        <ComboBox fx:id="cityFilterComboBox" minWidth="350.0" promptText="Filter by City" />
+                        <Label id="darkBackgroundText" fx:id="customerLabel" text="Customers:" />
                         <Label id="darkBackgroundText" fx:id="avgAgeLabel" text="Avg Age:" />
-                        <Label id="darkBackgroundText" text="Search" />
-                        <TextField fx:id="searchTextField" />
                      </children>
                   </VBox>
                   <HBox id="hbox" alignment="CENTER" prefHeight="489.0" prefWidth="795.0">
@@ -54,8 +58,11 @@
                             <NumberAxis side="LEFT" />
                           </yAxis>
                         </BarChart>
-                        <ComboBox fx:id="comboBox" prefWidth="300.0" />
+                        <ComboBox fx:id="comboBox" prefWidth="300.0" promptText="Select Chart" />
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </HBox>
                </children>
             </HBox>

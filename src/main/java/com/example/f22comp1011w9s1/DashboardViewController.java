@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.OptionalDouble;
@@ -20,7 +21,7 @@ public class DashboardViewController implements Initializable {
     private BarChart<String, Integer> barChart;
 
     @FXML
-    private TableColumn<Customer, Integer> birthdayColumn;
+    private TableColumn<Customer, LocalDate> birthdayColumn;
 
     @FXML
     private TableColumn<Customer, String> bloodTypeColumn;
@@ -35,7 +36,7 @@ public class DashboardViewController implements Initializable {
     private Label avgAgeLabel;
 
     @FXML
-    private TableColumn<Customer, String> fulleNameColumn;
+    private TableColumn<Customer, String> fullNameColumn;
 
     @FXML
     private TableColumn<Customer, Integer> idColumn;
@@ -47,7 +48,7 @@ public class DashboardViewController implements Initializable {
     private TextField searchTextField;
 
     @FXML
-    private ComboBox<?> cityFilterComboBox;
+    private ComboBox<String> cityFilterComboBox;
 
     @FXML
     private TableView<Customer> tableView;
@@ -58,11 +59,13 @@ public class DashboardViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         customers = DBUtility.getCustomers();
         idColumn.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        fulleNameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
+        fullNameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
         bloodTypeColumn.setCellValueFactory(new PropertyValueFactory<>("bloodType"));
         provinceColumn.setCellValueFactory(new PropertyValueFactory<>("province"));
-        birthdayColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
+        birthdayColumn.setCellValueFactory(new PropertyValueFactory<>("birthday"));
         tableView.getItems().addAll(customers);
+
+
 
         //configure the combobox
         comboBox.getItems().addAll("Age","Blood Type","Province");

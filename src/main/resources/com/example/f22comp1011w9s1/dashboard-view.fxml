@@ -21,9 +21,9 @@
             <TableView fx:id="tableView" prefHeight="508.0" prefWidth="1180.0">
               <columns>
                 <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="fulleNameColumn" prefWidth="75.0" text="Full Name" />
+                <TableColumn fx:id="fullNameColumn" prefWidth="75.0" text="Full Name" />
                   <TableColumn fx:id="provinceColumn" prefWidth="75.0" text="Province" />
-                  <TableColumn fx:id="birthdayColumn" prefWidth="75.0" text="Age" />
+                  <TableColumn fx:id="birthdayColumn" prefWidth="75.0" text="Birthday" />
                   <TableColumn fx:id="bloodTypeColumn" prefWidth="75.0" text="Blood Type" />
               </columns>
                <columnResizePolicy>
