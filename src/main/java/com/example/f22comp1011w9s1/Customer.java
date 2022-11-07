@@ -118,6 +118,8 @@ public class Customer {
      */
     public boolean contains(String searchText)
     {
-        return getFullName().contains(searchText);
+        return getFullName().contains(searchText) ||
+                province.contains(searchText) ||
+                bloodType.contains(searchText);
     }
 }
