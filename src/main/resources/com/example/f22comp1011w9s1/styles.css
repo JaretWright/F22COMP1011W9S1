@@ -1,0 +1,35 @@
+.root{
+    -fx-font-size: 20pt;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: linear-gradient(from 400px 400px to 800px 800px,#4b5463,#303e57);
+}
+
+.table-view {
+    -fx-background-radius: 30pt;
+    -fx-background-color: #a5acb8;
+}
+
+.error{
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+}
+
+#header{
+    -fx-font-size: 35pt;
+    -fx-text-fill: #FFFFFF;
+}
+
+.chart-bar{
+    -fx-background-color: rgb(3,190,252);
+    -fx-border-color: rgb(37,42,43);
+}
+
+#hbox {
+    -fx-background-color: #a5acb8;
+    -fx-background-radius: 30pt;
+}
+
+#darkBackgroundText
+{
+    -fx-text-fill: #FFFFFF;
+}
