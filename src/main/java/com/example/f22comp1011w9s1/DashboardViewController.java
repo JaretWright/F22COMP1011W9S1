@@ -73,6 +73,15 @@ public class DashboardViewController implements Initializable {
 
         barChart.setLegendVisible(false);
 
+        //configure the searchText field to filter the tableview
+        searchTextField.textProperty().addListener((obs, old, searchText)->{
+            tableView.getItems().clear();
+            tableView.getItems().addAll(customers.stream()
+                                        .filter(customer -> customer.contains(searchText))
+                                        .collect(Collectors.toList()));
+            updateLabels();
+        });
+
         updateLabels();
     }
 

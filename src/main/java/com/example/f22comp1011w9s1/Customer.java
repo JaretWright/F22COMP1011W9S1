@@ -93,12 +93,6 @@ public class Customer {
         return firstName + " " + lastName;
     }
 
-    public boolean contains(String searchText)
-    {
-        return getFullName().contains(searchText) || province.contains(searchText)
-                || bloodType.contains(searchText);
-    }
-
     public String getCity() {
         return city;
     }
@@ -118,4 +112,12 @@ public class Customer {
         return Period.between(birthday,LocalDate.now()).getYears();
     }
 
+    /**
+     * This returns true if the search text is found in the customer's
+     * name, blood type, city, or province
+     */
+    public boolean contains(String searchText)
+    {
+        return getFullName().contains(searchText);
+    }
 }
