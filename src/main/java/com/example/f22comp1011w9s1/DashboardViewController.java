@@ -65,8 +65,6 @@ public class DashboardViewController implements Initializable {
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<>("birthday"));
         tableView.getItems().addAll(customers);
 
-
-
         //configure the combobox
         comboBox.getItems().addAll("Age","Blood Type","Province");
         comboBox.valueProperty().addListener((obs,old,newValue)->{
@@ -81,6 +79,15 @@ public class DashboardViewController implements Initializable {
     private void updateLabels()
     {
         customerLabel.setText("Customers in table: "+tableView.getItems().size());
+
+        OptionalDouble avg =tableView.getItems().stream()                           //stream of Customer objects
+                                    .mapToDouble(customer -> customer.getAge())     //stream of Double
+                                    .average();
+
+        if (avg.isPresent())
+            avgAgeLabel.setText(String.format("Avg Age: %.0f",avg.getAsDouble()));
+        else
+            avgAgeLabel.setText("Avg Age: N/A");
     }
 }
 

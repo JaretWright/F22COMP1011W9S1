@@ -19,7 +19,7 @@ public class DBUtility {
     //127.0.0.1 = IP address of the server (127.0.0.1 is the local host)
     //3306 = port # that MySQL server is accessible on
     //F22 = database name
-    private static String connURL = "jdbc:mysql://127.0.0.1:3306/F22Midterm";
+    private static String connURL = "jdbc:mysql://127.0.0.1:3306/F22";
 
     //We also updated the pom.xml with the maven information and added requires java.sql
     //to the module-info file

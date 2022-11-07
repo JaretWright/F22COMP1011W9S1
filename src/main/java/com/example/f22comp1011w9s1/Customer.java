@@ -110,4 +110,12 @@ public class Customer {
             throw new IllegalArgumentException("city must be 2 or more characters");
     }
 
+    /**
+     * This method will return the customer age in years
+     */
+    public int getAge()
+    {
+        return Period.between(birthday,LocalDate.now()).getYears();
+    }
+
 }
